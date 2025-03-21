@@ -1,5 +1,19 @@
 #!/usr/bin/env python2.7
-"""
+""" 
+    python script intended to be used as a mapper for a mapreduce job using Hadoop
+    it takes in lines from STDIN printed from salaries.csv, cleans the data by
+    skipping duplicates and NaN values, and reformats the data by only id,
+    company, and totalyearlysalary to be streamed to the reducer
+
+    this script does not assume that the whole file is being inputted together.
+    hadoop may split the data into 2 or more batches, so the script checks the
+    starting id
+
+    Dependencies
+    ------------
+
+    Usage
+    -----
 
 """
 import sys
