@@ -1,7 +1,20 @@
 #!/usr/bin/env python2.7
-""
+"""
+    python script intended to be used as a reducer for a mapreduce job using
+    Hadoop. it takes in lines from STDIN that were printed by the mapper,
+    which containts the cleaned and formatted data from salaries.csv and 
+    finds 10 the entries that contain the highest salaries
 
-""
+    
+    Dependencies
+    ------------
+
+    Usage
+    -----
+
+    
+
+"""
 import sys
 import re
 
