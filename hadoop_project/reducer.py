@@ -53,6 +53,8 @@ for line in sys.stdin:
             # check if the salaru of this current line is greater than the
             # smallest salary 
             if int(salary) > int(top_salaries[9][2]):
+                # if so, remove the first entry in the list (the smallest
+                # of the top salary) and replace it with the new entry 
                 top_salaries[-1] = (employee_id, company, salary)
                 top_salaries.sort(key=lambda x: int(x[2]), reverse=True)
 

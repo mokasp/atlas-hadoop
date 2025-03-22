@@ -11,6 +11,10 @@
 
     Dependencies
     ------------
+    python 2.7
+        - sys: for in/output and reading from stdin and writing to stdout
+
+    hadoop 3.3.1
 
     Usage
     -----
