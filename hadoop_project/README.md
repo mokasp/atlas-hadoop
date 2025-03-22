@@ -29,7 +29,7 @@ To run the python scripts that utilize snakebite, you can find run the ```mainfi
 
 ```./mainfiles/6-main.py```
 
-Just like with the bash scripts, you can run ```hdfs dfs -ls -R /``` to verify if thw scripts are running properly
+Just like with the bash scripts, you can run ```hdfs dfs -ls -R /``` to verify if the scripts are running properly
 
 ## Running mapreduce job
 This part can be a little tricky because you must be sure youve specified the file paths correctly, but you are calling files from both your local system and hadoops distributed file system. be sure to use the absolute file paths. the command should look like this:
