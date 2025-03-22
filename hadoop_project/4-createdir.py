@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
-""" This file contains a function that utilizes snakebite's Client object to
+"""
+    This file contains a function that utilizes snakebite's Client object to
     connect to and interact with a hadoop distributed file system 
     
     Functions
@@ -23,13 +24,13 @@
     to check if it was properly created:
         hadoop fs -ls R /
 
-    
-    """
+"""
 from snakebite.client import Client
 
 
 def createdir(l):
-    """ function that creates directories on the Hadoop Distributed File
+    """
+        function that creates directories on the Hadoop Distributed File
         system
         
         Args
@@ -40,7 +41,7 @@ def createdir(l):
         -------
         None
         
-        """
+    """
     client = Client('localhost', 9000)
 
     for file in l:
