@@ -1,9 +1,9 @@
 #!/usr/bin/env python2.7
-""" 
-    python script intended to be used as a mapper for a mapreduce job using Hadoop
-    it takes in lines from STDIN printed from salaries.csv, cleans the data by
-    skipping duplicates and NaN values, and reformats the data by only id,
-    company, and totalyearlysalary to be streamed to the reducer
+"""
+    python script intended to be used as a mapper for a mapreduce job using
+    Hadoop it takes in lines from STDIN printed from salaries.csv, cleans
+    the data by skipping duplicates and NaN values, and reformats the data
+    by only id, company, and totalyearlysalary to be streamed to the reducer
 
     this script does not assume that the whole file is being inputted together.
     hadoop may split the data into 2 or more batches, so the script checks the
@@ -18,7 +18,22 @@
 
     Usage
     -----
+    to run just the mapper with mapred in hadoop:
+        mapred streaming -input <input_path> \
+            -output <output_path> -mapper <mapper_script> \
+                -file mapper.py
 
+    to run the full mapreduce job in hadoop:
+        mapred streaming -input <input_path> \
+            -output <output_path> -mapper <mapper_script> \
+                -reducer <reducer_script>
+
+    to run locally without hadoop:
+        cat /path/to/salaries.csv | python /path/to/mapper.py
+
+    you can pipe the result into the reducer:
+        cat /path/to/salaries.csv | python /path/to/mapper.py \
+            | python /path/to/reducer.py
 """
 import sys
 

@@ -2,18 +2,27 @@
 """
     python script intended to be used as a reducer for a mapreduce job using
     Hadoop. it takes in lines from STDIN that were printed by the mapper,
-    which containts the cleaned and formatted data from salaries.csv and 
+    which containts the cleaned and formatted data from salaries.csv and
     finds 10 the entries that contain the highest salaries
 
-    
+
     Dependencies
     ------------
+    python 2.7
+        - sys: for in/output and reading from stdin and writing to stdout
+        - re: for regular expressions
+    hadoop 3.3.1
 
     Usage
     -----
+    to run with mapred in hadoop:
+        mapred streaming -input <input_path> \
+            -output <output_path> -mapper <mapper_script> \
+                -reducer <reducer_script>
 
-    
-
+    to run locally without hadoop:
+        cat /path/to/salaries.csv | python /path/to/mapper.py \
+            | python /path/to/reducer.py
 """
 import sys
 import re
@@ -46,15 +55,14 @@ for line in sys.stdin:
             # to enable easy compaing
             top_salaries.sort(key=lambda x: int(x[2]), reverse=True)
 
-
         # once it has 10 elements we can start comparing salaries
         else:
 
             # check if the salaru of this current line is greater than the
-            # smallest salary 
+            # smallest salary
             if int(salary) > int(top_salaries[9][2]):
                 # if so, remove the first entry in the list (the smallest
-                # of the top salary) and replace it with the new entry 
+                # of the top salary) and replace it with the new entry
                 top_salaries[-1] = (employee_id, company, salary)
                 top_salaries.sort(key=lambda x: int(x[2]), reverse=True)
 
@@ -68,4 +76,8 @@ top_salaries.sort(key=lambda x: int(x[2]), reverse=True)
 print('id\tSalary\tcompany')
 # print each top salary in ascending order
 for j in range(len(top_salaries)):
-    print(top_salaries[j][0] + '\t' + str(float(top_salaries[j][2])) + '\t' + top_salaries[j][1])
+    print(top_salaries[j][0] +
+          '\t' +
+          str(float(top_salaries[j][2])) +
+          '\t' +
+          top_salaries[j][1])
