@@ -10,7 +10,9 @@
 
     Dependencies
     ------------
-
+    python 2.7
+        - snakebite : python client for interacting with HDFS
+    hadoop 3.3.1
 
 
     Usage
