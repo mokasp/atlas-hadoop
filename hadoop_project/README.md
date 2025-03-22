@@ -1,6 +1,6 @@
 # Using bash and python to utilize Hadoop's distributed storage and processing utilities
 
-This project explores Hadoop's distributed file system and clustering capabilities
+This project explores Hadoop's distributed file system and clustering capabilities using both Bash and Python for data storage, processing and management. the goal of the project is to learn how to use Hadoop's parallel processing and scalability to implement MapReduce tasks for faster and more efficient data processing and analysis.
 
 ## Set Up and Environment
 I am working on a linux environment and i followed [this tutorial](https://www.baeldung.com/linux/hadoop-install-configure). I used ```Hadoop 3.3.1``` and ```Python 2.7``` in a virtual environment. the ```snakebite``` python package is required for some of the tasks aswell.
