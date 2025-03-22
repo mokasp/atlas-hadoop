@@ -18,7 +18,7 @@
     Usage
     -----
     run this command in the terminal:
-        python /mainfiles/5-main.py
+        python mainfiles/5-main.py
 
     to check if it was properly deleted:
         hadoop fs -ls R /

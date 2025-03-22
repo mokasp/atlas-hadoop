@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 """ This file contains a function that utilizes snakebite's Client object to
-    connect to and interact with a hadoop distributed file system
-
+    connect to and interact with a hadoop distributed file system 
+    
     Functions
     ---------
     createdir(l) : takes in a list of names of directories to create and
@@ -17,9 +17,13 @@
 
     Usage
     -----
-    ./mainfiles/4-main.py
+    run this command in the terminal:
+        python mainfiles/4-main.py
+    
+    to check if it was properly created:
+        hadoop fs -ls R /
 
-
+    
     """
 from snakebite.client import Client
 
@@ -27,15 +31,15 @@ from snakebite.client import Client
 def createdir(l):
     """ function that creates directories on the Hadoop Distributed File
         system
-
+        
         Args
         ----
         l (list) : list of directory names to create on HDFS
-
+        
         Returns
         -------
         None
-
+        
         """
     client = Client('localhost', 9000)
 
