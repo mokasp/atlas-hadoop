@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 """ This file contains a function that utilizes snakebite's Client object to
-    connect to and interact with a hadoop distributed file system 
-    
+    connect to and interact with a hadoop distributed file system
+
     Functions
     ---------
     download(l) : takes in a file name to retrieve from HDFS and copy to the
@@ -17,12 +17,12 @@
     hadoop 3.3.1
 
 
-
     Usage
     -----
-    
+    run this command in the terminal:
+        python /mainfiles/5-main.py
 
-    
+
     """
 from snakebite.client import Client
 
@@ -30,11 +30,11 @@ from snakebite.client import Client
 def download(l):
     """ function that copies files from the Hadoop Distributed File
         system to the local system's /tmp folder
-        
+
         Args
         ----
         l (str) : name of file to copy from HDFS to the local fs
-        
+
         Returns
         -------
         None
