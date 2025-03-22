@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
-""" This file contains a function that utilizes snakebite's Client object to
+"""
+    This file contains a function that utilizes snakebite's Client object to
     connect to and interact with a hadoop distributed file system
 
     Functions
@@ -20,12 +21,13 @@
     run this command in the terminal:
         python mainfiles/6-main.py
 
-    """
+"""
 from snakebite.client import Client
 
 
 def download(l):
-    """ function that copies files from the Hadoop Distributed File
+    """
+        function that copies files from the Hadoop Distributed File
         system to the local system's /tmp folder
 
         Args
@@ -36,7 +38,7 @@ def download(l):
         -------
         None
 
-        """
+    """
     client = Client('localhost', 9000)
 
     result = client.copyToLocal(l, '/tmp')

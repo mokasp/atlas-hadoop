@@ -1,5 +1,6 @@
 #!/usr/bin/env python2.7
-""" This file contains a function that utilizes snakebite's Client object to
+""" 
+    This file contains a function that utilizes snakebite's Client object to
     connect to and interact with a hadoop distributed file system
 
     Functions
@@ -23,14 +24,13 @@
     to check if it was properly deleted:
         hadoop fs -ls R /
 
-
-
     """
 from snakebite.client import Client
 
 
 def deletedir(l):
-    """ function that deletes directories from the Hadoop Distributed File
+    """
+        function that deletes directories from the Hadoop Distributed File
         system
 
         Args
@@ -41,7 +41,7 @@ def deletedir(l):
         -------
         None
 
-        """
+    """
     client = Client('localhost', 9000)
     result = client.delete([l[0]], recurse=True)
     print(list(result))
